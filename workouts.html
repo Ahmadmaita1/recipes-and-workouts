@@ -1,31 +1,32 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Workout Plans</title>
+    <title>Recipe & Workout Finder</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>Workout Plans</h1>
+        <div class="header-content">Recipe & Workout Finder</div>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="recipes.html">Find Recipes</a></li>
                 <li><a href="workouts.html">Workout Plans</a></li>
-               
             </ul>
         </nav>
     </header>
+<main>
     
-    <main>
+    <div class="search-container">
         <h2>Find a Workout Plan</h2>
         <input type="text" id="workoutInput" placeholder="Enter workout type (e.g., cardio, strength)">
         <button onclick="searchWorkouts()">Search</button>
         <div id="workoutResults"></div>
-    </main>
-    
-    <script src="script.js"></script>
+    </div>
+</main>
+<script src="script.js"></script>
+
 </body>
-</html>

@@ -4,136 +4,257 @@
     box-sizing: border-box;
 }
 
-
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(to right, #4facfe, #00f2fe); 
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, hsl(212, 94%, 60%), #00f2fe);
     color: #222;
 }
 
-
+/* Header Styling */
 header {
-    background: #1b1f3b; 
+    background: url('https://source.unsplash.com/1600x400/?fitness,healthy') center/cover no-repeat;
     color: white;
-    padding: 15px;
     text-align: center;
+    padding: 60px 20px;
+    position: relative;
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.header-content {
+    position: relative;
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Navigation Bar */
+nav {
+    background: #2a2d4a;
+    display: flex;
+    justify-content: center;
+    padding: 15px 0;
+    position: relative;
+    z-index: 2;
 }
 
 nav ul {
     list-style: none;
-    padding: 0;
     display: flex;
-    justify-content: center;
-    background: #2a2d4a; 
+    padding: 0;
 }
 
 nav ul li {
-    margin: 0 15px;
+    margin: 0 20px;
 }
 
 nav ul li a {
-    color: #ffffff;
+    color: white;
     text-decoration: none;
+    font-size: 18px;
     font-weight: bold;
-    transition: color 0.3s;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
 }
 
 nav ul li a:hover {
-    color: #00f2fe; 
+    background: #00f2fe;
+    color: #222;
+    transform: scale(1.1);
 }
 
-
+/* Main Section */
 main {
     text-align: center;
     padding: 50px;
+    position: relative;
 }
 
+/* Images on Each Page */
+.main-image-left, .main-image-right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 250px;
+    height: auto;
+    border-radius: 10px;
+}
 
+.main-image-left {
+    left: 10px;
+   
+}
+
+.main-image-right {
+    right: 10px;
+}
+
+/* Buttons */
 .btn {
     display: inline-block;
-    margin: 15px;
-    padding: 10px 20px;
-    background: #008080; 
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 5px;
-    transition: background 0.3s, transform 0.2s;
-}
-
-.btn:hover {
-    background: #00b894; 
-    transform: scale(1.05);
-}
-
-
-.results-container {
-    display: flex;
-    justify-content: center;  
-    align-items: center;      
-    flex-direction: column;   
-    min-height: 100vh;        
-    width: 100%;     
-       
-}
-
-.recipe-card {
-    display: flex;
-    align-items: center;
-    justify-content: center; 
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    padding: 15px;
-    width: 1200px;  
-    max-width: 90%;
-    transition: transform 0.3s;
-    margin-top: 10px;
-}
-
-
-.recipe-card:hover {
-    transform: scale(1.03);
-}
-
-.recipe-card img {
-    width: 200px;
-    height: 200px;
-    border-radius: 10px;
-    margin-right: 15px;
-    object-fit: cover;
-}
-
-
-.recipe-text {
-    flex: 1;
-}
-
-.recipe-card h3 {
-    font-size: 18px;
-    margin: 5px 0;
-}
-
-.recipe-card p {
-    font-size: 14px;
-    color: #555;
-    margin: 5px 0;
-}
-
-
-.recipe-card a {
-    display: inline-block;
-    padding: 8px 12px;
+    padding: 12px 24px;
     background: #008080;
     color: white;
     text-decoration: none;
     font-weight: bold;
     border-radius: 5px;
-    transition: background 0.3s;
+    transition: all 0.3s ease-in-out;
+    font-size: 16px;
 }
 
-.recipe-card a:hover {
+.btn:hover {
     background: #00b894;
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Styled Container for Recipe & Workout Search */
+.search-container {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 30px;
+    border-radius: 10px;
+    display: inline-block;
+    width: 60%;
+    text-align: center;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Search Input */
+input[type="text"] {
+    padding: 10px;
+    width: 60%;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-right: 10px;
+}
+
+/* Search Button */
+button {
+    padding: 10px 15px;
+    background: #008080;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+button:hover {
+    background: #00b894;
+    transform: scale(1.05);
+}
+
+/* Home Page Styling */
+#home {
+    max-width: 800px;
+    margin: auto;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#home h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+#home p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #333;
+    margin-bottom: 20px;
+}
+/* Recipe Card Styling */
+.recipe-card {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    padding: 15px;
+    margin: 15px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.recipe-card:hover {
+    transform: scale(1.05);
+}
+
+/* Food Image Styling */
+.recipe-card img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+/* Recipe Text Styling */
+.recipe-text {
+    flex: 1;
+}
+
+.recipe-text h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #222;
+}
+
+/* View Recipe Button */
+.view-recipe-btn {
+    display: inline-block;
+    padding: 10px 15px;
+    background: #008080;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+    font-size: 14px;
+    text-align: center;
+}
+
+.view-recipe-btn:hover {
+    background: #00b894;
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+/* Style for Recipe & Workout Links as Buttons */
+.recipe-card a,
+.workout-card a {
+    display: inline-block;
+    padding: 10px 15px;
+    background: #008080;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+    font-size: 14px;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.recipe-card a:hover,
+.workout-card a:hover {
+    background: #00b894;
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
